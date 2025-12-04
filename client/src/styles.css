@@ -444,6 +444,29 @@ nav a.active {
   opacity: 1;
 }
 
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #9f9cb2;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #ff6b9d;
+}
+
+.conversion-result {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #d0a7f4;
+  margin-bottom: 0.5rem;
+}
+
+.rate-info {
+  font-size: 0.9rem;
+  color: #9f9cb2;
+}
 
 @media (max-width: 1024px) {
   .hero h1 { font-size: 2.6rem; }
