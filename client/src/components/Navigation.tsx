@@ -1,24 +1,24 @@
 import { Link, useLocation } from 'wouter';
 
 export default function Navigation() {
-  const [location] = useLocation();
+    const [location] = useLocation();
 
-  const isActive = (path: string) => location === path;
+    const isActive = (path: string) => location === path;
 
-  return (
-    <nav>
-      <Link href="/">
-        <a className={isActive('/') ? 'active' : ''}>Главная</a>
-      </Link>
-      <Link href="/music">
-        <a className={isActive('/music') ? 'active' : ''}>Музыка</a>
-      </Link>
-      <Link href="/currency">
-        <a className={isActive('/currency') ? 'active' : ''}>Конвертер валюты</a>
-      </Link>
-      <Link href="/books">
-        <a className={isActive('/books') ? 'active' : ''}>Книги</a>
-      </Link>
-    </nav>
-  );
+    return (
+        <nav>
+            <Link href="/" className={isActive('/') ? 'active' : ''}>
+                Главная
+            </Link>
+            <Link href="/music" className={isActive('/music') ? 'active' : ''}>
+                Музыка
+            </Link>
+            <Link href="/currency" className={isActive('/currency') ? 'active' : ''}>
+                Конвертер валюты
+            </Link>
+            <Link href="/books" className={isActive('/books') ? 'active' : ''}>
+                Книги
+            </Link>
+        </nav>
+    );
 }
