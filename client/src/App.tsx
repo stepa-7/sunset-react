@@ -1,4 +1,4 @@
-import { Route, Switch } from "wouter";
+import { Route, Switch, Router } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -6,8 +6,9 @@ import Music from "./pages/Music";
 import Currency from "./pages/Currency";
 import Books from "./pages/Books";
 import "./styles.css";
+import { useHashLocation } from "wouter/use-hash-location";
 
-function Router() {
+function Routes() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -21,10 +22,10 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-      >
-          <Router />
+      <ThemeProvider defaultTheme="light">
+          <Router hook={useHashLocation}>
+              <Routes />
+          </Router>
       </ThemeProvider>
     </ErrorBoundary>
   );
